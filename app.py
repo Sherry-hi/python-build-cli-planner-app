@@ -1,6 +1,5 @@
 from src.database import add_reminder, list_reminders
 
-
 def handle_input():
     choice = input("Choice: ")
     if choice == "3":
@@ -12,8 +11,8 @@ def handle_input():
     elif(choice == "2"):
         print()
         reminder = input("What would you like to be reminded about?: ")
-
-        add_reminder(reminder)
+        date = input("When is that due?: ")
+        add_reminder(reminder,date, DateReminder)
         list_reminders()
     else:
         print("Invalid menu option")
