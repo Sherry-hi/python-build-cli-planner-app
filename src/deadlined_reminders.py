@@ -4,6 +4,7 @@ from abc import ABC
 from dateutil.parser import parse
 from datetime import datetime
 
+
 class DeadlinedMetaReminder(Iterable,metaclass=ABCMeta):
 
     def __iter__(self):
@@ -32,3 +33,6 @@ class DateReminder(DeadlinedReminder):
             return True
         else:
             return False
+
+    def __iter__(self):
+        return iter([self.text,self.date.isoformat()])
