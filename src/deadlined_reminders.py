@@ -14,6 +14,10 @@ class DeadlinedMetaReminder(Iterable,metaclass=ABCMeta):
     def is_due(self):
         pass
     
+    def __subclasscheck__(cls, subclass):
+        if cls is not DeadlinedReminder:
+            return NotImplemented
+    
 class DeadlinedReminder(ABC):
     
     def __iter__(self):
